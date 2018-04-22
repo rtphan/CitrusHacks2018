@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { auth } from './firebase';
+import { auth, database } from './firebase';
 import * as routes from './routes';
 
 const INITIAL_STATE = {
@@ -51,7 +51,14 @@ class SignUpForm extends Component {
 
     auth.createUserWithEmailAndPassword(email, passwordOne)
       .then(authUser => {
-        this.setState(() => ({ ...INITIAL_STATE }));
+        const profileRef = database.ref('Profiles');
+        const profile = {
+          email: this.state.email
+        }
+        profileRef.push(profile);
+        this.setState({
+          email: ''
+        });
         history.push(routes.HOME);
       })
       .catch(error => {

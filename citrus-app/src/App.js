@@ -3,6 +3,7 @@ import {Switch, Link, Route} from "react-router-dom";
 import './App.css';
 import SignIn from './Components/signIn';
 import SignUp from './Components/signUp';
+import Planners from './Components/planners';
 import * as routes from './Components/routes';
 
 
@@ -43,7 +44,7 @@ class App extends Component {
             <SignUp />
           )}/>
           <Route exact path={"/planner-lists"} render={() => (
-            <div>
+            /*<div>
               <header>
                 <div className='wrapper'>
                   <h1>Choose a Planner</h1>
@@ -65,7 +66,8 @@ class App extends Component {
                   </Link></li>
                 </div>
               </ul>
-            </div>
+            </div>*/
+            <Planners />
           )}/>
           <Route exact path={"/planner-temp"} render={() => (
             <div>This is your planner</div>
