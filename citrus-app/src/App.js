@@ -10,7 +10,7 @@ class App extends Component {
           <Route exact path={"/"} render={() => (<div>
             <header>
                 <div className='wrapper'>
-                  <h1>$$ Plannerr $$</h1>
+                  <h1>$$ Planner $$</h1>
                 </div>
             </header>
             <div className='container'>
@@ -29,7 +29,15 @@ class App extends Component {
                   </ul>
                 </div>
               </section>
+              <Link to={"/new-user"}>
+                <div className="sign-up">New user? Sign up here!</div>
+              </Link>
             </div>
+            </div>
+          )}/>
+          <Route exact path={"/new-user"} render={() => (
+            <div>
+            TO-DO: JASON ADD IN BETWEEN HERE
             </div>
           )}/>
           <Route exact path={"/planner-lists"} render={() => (
