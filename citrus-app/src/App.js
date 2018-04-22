@@ -10,7 +10,7 @@ class App extends Component {
           <Route exact path={"/"} render={() => (<div>
             <header>
                 <div className='wrapper'>
-                  <h1>$$ Plannerr $$</h1>
+                  <h1>$$ Planner $$</h1>
                 </div>
             </header>
             <div className='container'>
@@ -29,13 +29,44 @@ class App extends Component {
                   </ul>
                 </div>
               </section>
+              <Link to={"/new-user"}>
+                <div className="sign-up">New user? Sign up here!</div>
+              </Link>
             </div>
+            </div>
+          )}/>
+          <Route exact path={"/new-user"} render={() => (
+            <div>
+            TO-DO: JASON ADD IN BETWEEN HERE
             </div>
           )}/>
           <Route exact path={"/planner-lists"} render={() => (
             <div>
-              Welcome to planner-lists
+              <header>
+                <div className='wrapper'>
+                  <h1>Choose a Planner</h1>
+                </div>
+              </header>
+              <ul class="planners">
+                <div class={"planner-buttons"}>
+                  <li><Link to={"/planner-temp"}>
+                    <button class="planner-buttons button1">Planner 1</button>
+                  </Link></li>
+                  <li><Link to={"/planner-temp"}>
+                    <button class="planner-buttons button2">Planner 2</button>
+                  </Link></li>
+                  <li><Link to={"/planner-temp"}>
+                    <button class="planner-buttons button3">Planner 3</button>
+                  </Link></li>
+                  <li><Link to={"/planner-temp"}>
+                    <button class="planner-buttons new-planner">Add Planner</button>
+                  </Link></li>
+                </div>
+              </ul>
             </div>
+          )}/>
+          <Route exact path={"/planner-temp"} render={() => (
+            <div>This is your planner</div>
           )}/>
         </Switch>
       </div>
