@@ -34,8 +34,31 @@ class App extends Component {
           )}/>
           <Route exact path={"/planner-lists"} render={() => (
             <div>
-              Welcome to planner-lists
+              <header>
+                <div className='wrapper'>
+                  <h1>Choose a Planner</h1>
+                </div>
+              </header>
+              <ul class="planners">
+                <div class={"planner-buttons"}>
+                  <li><Link to={"/planner-temp"}>
+                    <button class="planner-buttons button1">Planner 1</button>
+                  </Link></li>
+                  <li><Link to={"/planner-temp"}>
+                    <button class="planner-buttons button2">Planner 2</button>
+                  </Link></li>
+                  <li><Link to={"/planner-temp"}>
+                    <button class="planner-buttons button3">Planner 3</button>
+                  </Link></li>
+                  <li><Link to={"/planner-temp"}>
+                    <button class="planner-buttons new-planner">Add Planner</button>
+                  </Link></li>
+                </div>
+              </ul>
             </div>
+          )}/>
+          <Route exact path={"/planner-temp"} render={() => (
+            <div>This is your planner</div>
           )}/>
         </Switch>
       </div>
