@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import {Switch, Link, Route} from "react-router-dom";
 import './App.css';
+import SignIn from './Components/signIn';
+import SignUp from './Components/signUp';
+import * as routes from './Components/routes';
 
 
 class App extends Component {
   render() {
     return <div className='app'>
         <Switch>
-          <Route exact path={"/"} render={() => (<div>
+          <Route exact path={"/"} render={() => (/*<div>
             <header>
                 <div className='wrapper'>
                   <h1>$$ Planner $$</h1>
@@ -33,12 +36,11 @@ class App extends Component {
                 <div className="sign-up">New user? Sign up here!</div>
               </Link>
             </div>
-            </div>
+            </div>*/
+            <SignIn />
           )}/>
-          <Route exact path={"/new-user"} render={() => (
-            <div>
-            TO-DO: JASON ADD IN BETWEEN HERE
-            </div>
+          <Route exact path={"/new-user"} component={() => (
+            <SignUp />
           )}/>
           <Route exact path={"/planner-lists"} render={() => (
             <div>

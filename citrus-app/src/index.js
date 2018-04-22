@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import auth from './auth';
-import firebase from './firebase';
+import firebase from './Components/firebase';
 import registerServiceWorker from './registerServiceWorker';
 import {HashRouter} from 'react-router-dom';
 
@@ -15,6 +14,5 @@ ReactDOM.render(
 registerServiceWorker();
 
 export {
-  auth,
-  firebase,
+  firebase
 };
